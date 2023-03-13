@@ -1,4 +1,3 @@
-
 interface CatImageProps {
 	image: string;
 	altText: string;
