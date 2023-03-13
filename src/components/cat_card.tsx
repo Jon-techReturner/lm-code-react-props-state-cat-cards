@@ -123,16 +123,20 @@ interface CatCardProps{
         <div className='card'>
             <h3 className='card__text card__header'>{props.catObject.name}</h3>
             <p className='card__text'>Birth Year: 1984</p>
-	        <CatImage 
-                    image={images[props.catIndex].image} 
-                    altText={images[props.catIndex].altText}
-                    licenceType={images[props.catIndex].licenceType}
-                    licenceUrl={images[props.catIndex].licenceUrl}
-                    attributionName={images[props.catIndex].attributionName}
-                    attributionUrl={images[props.catIndex].attributionUrl} />
-            <p className='card__text'>Species: {props.catObject.species}</p>
-            <p className='card__text'>Favourite Food(s): {props.catObject.favFoods}</p>
-            <p className='card__text'>Birth Year: {props.catObject.birthYear}</p>
+                {props.catIndex < images.length && (
+                    <CatImage 
+                            image={images[props.catIndex].image} 
+                            altText={images[props.catIndex].altText}
+                            licenceType={images[props.catIndex].licenceType}
+                            licenceUrl={images[props.catIndex].licenceUrl}
+                            attributionName={images[props.catIndex].attributionName}
+                            attributionUrl={images[props.catIndex].attributionUrl} />
+                        )}
+                <p className='card__text'>Species: {props.catObject.species}</p>
+                <p className='card__text'>Favourite Food(s): {props.catObject.favFoods}</p>
+                <p className='card__text'>Birth Year: {props.catObject.birthYear}</p>
+            
+
         </div>
     );
  };
