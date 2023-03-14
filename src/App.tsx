@@ -6,25 +6,24 @@ import { useState } from 'react';
 import Cat from './data/cat';
 import CatCard from './components/cat_card';
 import catData from "./data/catData"
-import { v4 as uuidv4 } from 'uuid';
-import CatImage from './components/cat_image';
+import DogCard from './components/dog_card';
+import dogsData from './data/dog-data';
+import Dog from './data/dog';
+import { Form } from './components/new_item';
 
 	
 function App(): JSX.Element {
 	
 	const [ cats, setCats ] = useState<Array<Cat>>(catData);
 	const catCount = cats.length;
-	const images = CatImage;
-	cats.forEach((cat, index) => {
-		const id = uuidv4();
-		cat.id = id;
-		// images[index].id = id;
-	});
+	const [ dogs, setDogs ] = useState<Array<Dog>>(dogsData);
+	const dogCount = dogs.length;
 	
 	return (
 		<>
 			<Navbar />
-			<Header catCount={catCount}/>
+			<Header catCount={catCount}
+					dogCount = {dogCount} />
 
 			<main>
 				<div className="cards__wrapper">
@@ -35,7 +34,18 @@ function App(): JSX.Element {
 								catIndex ={index}
 							/>
 					))}
+					{dogs.map((dog, index) => (
+							<DogCard 
+								key={index}
+								dogObject={dog}
+								dogIndex ={index}
+							/>
+					))}
 				</div>
+				<div className='form__wrapper'>
+					<Form />
+				</div>
+				
 			</main>
 
 			<Footer />

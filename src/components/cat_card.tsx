@@ -131,7 +131,7 @@ interface CatCardProps{
                             attributionUrl={images[catIndex].attributionUrl} />
                         )}
             <p className='card__text'>Species: {catObject.species}</p>
-            <p className='card__text'>Favourite Food(s): {catObject.favFoods}</p>
+            <p className='card__text'>Favourite Food(s): {catObject.favFoods.join(", ")}</p>
             <p className='card__text'>Birth Year: {catObject.birthYear}</p>
             
 

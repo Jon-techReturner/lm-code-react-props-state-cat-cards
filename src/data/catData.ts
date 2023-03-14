@@ -65,7 +65,7 @@ import { v4 as uuidv4 } from 'uuid';
          {
              name: 'Nibbles',
              species: 'Hungry Cat',
-             favFoods: ['blankets', 'feet', 'tinsel'],
+             favFoods: ["blankets", 'feet', 'tinsel'],
              birthYear: 2003,
          },
          {
